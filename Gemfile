@@ -1,12 +1,15 @@
 source 'https://rubygems.org'
 
-gem 'rspec-rails'
-gem 'guard-bundler'
-gem 'guard-rspec'
-gem 'factory_girl_rails'
-
-group :test do
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'guard-rspec', require: false
+  gem 'guard-bundler'
+  gem 'factory_girl_rails'
   gem 'capybara'
+  gem 'faker'
+  gem 'bcrypt'
+  gem 'sqlite3'
+  gem 'shoulda-matchers'
 end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -43,6 +46,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'launchy'
 end
 
 group :development do
