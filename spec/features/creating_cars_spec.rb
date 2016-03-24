@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 feature 'Creating Cars: ' do
-  scenario 'create one cas and price shows on index' do
+  scenario 'create one car and price shows on index' do
     car = FactoryGirl.create(:car)
     visit '/'
     expect(page).to have_content(car.model)
@@ -17,7 +17,7 @@ feature 'Creating Cars: ' do
 end
 
 feature 'Updating Cars: ' do
-  scenario "User deletes a car" do
+  scenario 'User deletes a car' do
     car = FactoryGirl.create(:car)
     car2 = FactoryGirl.create(:car)
     visit cars_path
@@ -35,7 +35,7 @@ feature 'Updating Cars: ' do
     expect(page).to_not have_content(car2.price)
   end
 
-  scenario "User edits a car" do
+  scenario 'User edits a car' do
     car = FactoryGirl.create(:car)
     car2 = FactoryGirl.create(:car)
     visit cars_path
@@ -45,7 +45,7 @@ feature 'Updating Cars: ' do
 end
 
 feature 'Show a single car: ' do
-  scenario "User shows one car" do
+  scenario 'User shows one car' do
     car = FactoryGirl.create(:car)
     car2 = FactoryGirl.create(:car)
     visit cars_path
